@@ -1,18 +1,75 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
-body{
-background-color: #333;
+body {
+  font-size: 1.6rem;
 }
-.highlight{
-    display: flex;
-    height:100vh;
-    justify-content:center;
-    flex-grow: 1;
-    overflow: hidden;
+.header {
+  display: flex;
+  background-color: palevioletred;
+  justify-content: space-between;
+}
+.logo {
+  height: 10rem;
+  flex-basis: 10rem;
+  padding: 2rem;
+}
+.navbar {
+  padding: 2rem;
+  text-align: right;
+}
+.navbar li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 2rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+.main {
+  display: flex;
+  min-height:90rem;
+}
+.sidebar {
+  order: 1;
+  background-color: purple;
+}
+.sidebar div {
+  background-color: salmon;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  width: 25rem;
+  height:15rem;
+}
+.main-content {
+  order: 2;
+  background-color: lightgrey;
+}
+.footer {
+    display:flex;
+    background-color: yellow;
+    justify-content:space-between;
+}
+.footer-rrss{
+    padding: 2rem;
+    text-align: right;
+}
+.footer-rrss li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 2rem;
+}
+.footer-rrss li a{
+    text-decoration: none;
+    color:blue;
+}
+.footer-description{
+    width: 80rem;
+    font-size: 1.8rem;
 }
