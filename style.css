@@ -12,7 +12,7 @@ body {
 .header {
   display: flex;
   /* background-color: #182D7B; */
-  background-color:aliceblue;
+  background-color: aliceblue;
   justify-content: space-between;
  
 }
@@ -60,9 +60,11 @@ body {
  
   background-color: #1B4D8F;
 }
-.footer {
+.footer {  
+  font-size: 1.8rem;
   display: flex;
-  background-color: yellow;
+  color:aliceblue;
+  background-color: #444;
   justify-content: space-between;
 }
 .footer-rrss {
@@ -79,6 +81,9 @@ body {
   color: blue;
 }
 .footer-description {
+  padding: 2rem;
   width: 80rem;
-  font-size: 1.8rem;
+}
+.rrss{
+  width: 3rem;
 }
