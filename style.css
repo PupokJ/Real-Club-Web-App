@@ -11,7 +11,7 @@ body {
 }
 .header {
   display: flex;
-  background-color: palevioletred;
+  background-color: #182D7B;
   justify-content: space-between;
 }
 .logo {
