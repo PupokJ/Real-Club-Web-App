@@ -14,7 +14,6 @@ body {
   /* background-color: #182D7B; */
   background-color: aliceblue;
   justify-content: space-evenly;
- 
 }
 .logo {
   height: 15rem;
@@ -25,10 +24,9 @@ body {
   height: 14rem;
 }
 .navbar {
-  font-size: 1.8rem;;
+  font-size: 1.8rem;
   padding: 2rem;
   text-align: right;
-  
 }
 .navbar li {
   display: inline-block;
@@ -38,34 +36,37 @@ body {
 .navbar a {
   text-decoration: none;
   color: white;
-  color: #182D7B;
+  color: #182d7b;
 }
 .main {
   font-size: 1.6rem;
   display: flex;
   min-height: 90rem;
-  
 }
 .sidebar {
   order: 1;
-  background-color: #182D7B;
+  background-color: #1b4d8f;
 }
 .sidebar div {
   background-color: salmon;
-  margin: 1rem;
-  border-radius: 0.5rem;
-  width: 25rem;
+  margin: 3rem;
+  border-radius: 1rem;
+  width: 30rem;
   height: 15rem;
+  overflow: hidden;
+}
+.sidebar img {
+  width: 100%;
+  height: 20rem;
 }
 .main-content {
   order: 2;
- 
-  background-color: #1B4D8F;
+  background-color: #1b4d8f;
 }
-.footer {  
+.footer {
   font-size: 1.8rem;
   display: flex;
-  color:aliceblue;
+  color: aliceblue;
   background-color: #444;
   justify-content: space-evenly;
 }
@@ -86,6 +87,31 @@ body {
   padding: 2rem;
   width: 80rem;
 }
-.rrss{
+.rrss {
   width: 3rem;
+}
+.card-img-top {
+  /* height: 15vh; */
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  height: 30vh;
+}
+.card-img-top img {
+  width: 20vw;
+  border-radius: 1rem;
+}
+.main-header{
+  padding:  1rem;  
+  display: flex;  
+  justify-content: space-evenly;
+}
+.card-group{
+  padding:  1rem ;  
+  display: flex;  
+  justify-content: space-evenly;
+}
+.card{
+  margin: 0 0.5rem;
+  width: 90%;  
 }
