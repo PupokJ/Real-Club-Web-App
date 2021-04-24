@@ -15,18 +15,21 @@ body {
   justify-content: space-between;
 }
 .logo {
-  height: 10rem;
+  height: 20rem;
   flex-basis: 10rem;
   padding: 2rem;
+}
+.logo img {
+  height: 18rem;
 }
 .navbar {
   padding: 2rem;
   text-align: right;
 }
 .navbar li {
-    display: inline-block;
-    list-style: none;
-    padding: 0 2rem;
+  display: inline-block;
+  list-style: none;
+  padding: 0 2rem;
 }
 .navbar a {
   text-decoration: none;
@@ -34,7 +37,7 @@ body {
 }
 .main {
   display: flex;
-  min-height:90rem;
+  min-height: 90rem;
 }
 .sidebar {
   order: 1;
@@ -45,31 +48,31 @@ body {
   margin: 1rem;
   border-radius: 0.5rem;
   width: 25rem;
-  height:15rem;
+  height: 15rem;
 }
 .main-content {
   order: 2;
   background-color: lightgrey;
 }
 .footer {
-    display:flex;
-    background-color: yellow;
-    justify-content:space-between;
+  display: flex;
+  background-color: yellow;
+  justify-content: space-between;
 }
-.footer-rrss{
-    padding: 2rem;
-    text-align: right;
+.footer-rrss {
+  padding: 2rem;
+  text-align: right;
 }
-.footer-rrss li{
-    display: inline-block;
-    list-style: none;
-    padding: 0 2rem;
+.footer-rrss li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 2rem;
 }
-.footer-rrss li a{
-    text-decoration: none;
-    color:blue;
+.footer-rrss li a {
+  text-decoration: none;
+  color: blue;
 }
-.footer-description{
-    width: 80rem;
-    font-size: 1.8rem;
+.footer-description {
+  width: 80rem;
+  font-size: 1.8rem;
 }
