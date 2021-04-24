@@ -13,18 +13,19 @@ body {
   display: flex;
   /* background-color: #182D7B; */
   background-color: aliceblue;
-  justify-content: space-between;
+  justify-content: space-evenly;
  
 }
 .logo {
-  height: 20rem;
+  height: 15rem;
   flex-basis: 10rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 .logo img {
-  height: 18rem;
+  height: 14rem;
 }
 .navbar {
+  font-size: 1.8rem;;
   padding: 2rem;
   text-align: right;
   
@@ -40,6 +41,7 @@ body {
   color: #182D7B;
 }
 .main {
+  font-size: 1.6rem;
   display: flex;
   min-height: 90rem;
   
@@ -65,7 +67,7 @@ body {
   display: flex;
   color:aliceblue;
   background-color: #444;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .footer-rrss {
   padding: 2rem;
