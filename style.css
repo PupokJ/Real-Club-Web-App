@@ -11,7 +11,8 @@ body {
 }
 .header {
   display: flex;
-  background-color: #182D7B;
+  /* background-color: #182D7B; */
+  background-color:aliceblue;
   justify-content: space-between;
 }
 .logo {
