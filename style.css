@@ -131,5 +131,11 @@ body {
   background-color: aliceblue;
   border-radius: 0.5rem;
   text-align: center;
-  
+}
+.card-body img{
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  height: 30vh;
+  width: 510px;
 }
