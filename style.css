@@ -139,3 +139,8 @@ body {
   height: 30vh;
   width: 510px;
 }
+.register{
+    background-color:aquamarine;
+    padding:2rem;
+    border-radius: 1rem;
+}
