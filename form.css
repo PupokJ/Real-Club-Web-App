@@ -19,5 +19,7 @@ span.req {
     font-size: 112%;
 }
 main form{
-    width:50%;
+    width:100%;
+    display: flex;
+    justify-content: center;
 }
