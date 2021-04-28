@@ -1,3 +1,6 @@
+:root {
+  --primary-color: #232488;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,7 +15,7 @@ body {
 .header {
   display: flex;
   /* background-color: #182D7B; */
-  background-color: aliceblue;
+  background-color: var(--primary-color);
   justify-content: space-evenly;
 }
 .logo {
@@ -36,7 +39,6 @@ body {
 .navbar a {
   text-decoration: none;
   color: white;
-  color: #182d7b;
 }
 .main {
   font-size: 1.6rem;
@@ -45,7 +47,7 @@ body {
 }
 .sidebar {
   order: 1;
-  background-color: #1b4d8f;
+  background-color: var(--primary-color);
 }
 .sidebar div {
   background-color: salmon;
@@ -61,7 +63,7 @@ body {
 }
 .main-content {
   order: 2;
-  background-color: #1b4d8f;
+  background-color: var(--primary-color);
 }
 .footer {
   font-size: 1.8rem;
@@ -101,51 +103,49 @@ body {
   width: 20vw;
   border-radius: 1rem;
 }
-.main-header{
-  padding:  1rem;  
-  display: flex;  
+.main-header {
+  padding: 1rem;
+  display: flex;
   justify-content: space-evenly;
 }
-.card-group{
-  padding:  1rem ;  
-  display: flex;  
+.card-group {
+  padding: 1rem;
+  display: flex;
   justify-content: space-evenly;
 }
-.card{
+main .card {
   margin: 0 0.5rem;
-  width: 90%;  
+  width: 90%;
+  border-radius: 2rem;
 }
-.card-title{
+.card-title {
   font-size: 18px;
 }
-.h1-carousel{
+.h1-carousel {
   color: white;
-  font-family: 'Brush Script MT, Brush Script Std, cursive';
+  font-family: "Brush Script MT, Brush Script Std, cursive";
 }
 #carouselExampleDark {
   margin: 2rem;
 }
-.nom-carousel{
+.nom-carousel {
   padding: 1rem;
   margin: 2rem;
   background-color: aliceblue;
   border-radius: 0.5rem;
   text-align: center;
 }
-.card-body img{
+.card-body img {
   display: flex;
   justify-content: center;
   padding: 0.3rem;
   height: 35vh;
   width: 695px;
 }
-.register{
-    background-color:aquamarine;
-    padding:2rem;
-    border-radius: 1rem;
-}
-#hor-cards{
-  width: 100%;
- padding-left: 6rem;
- padding-bottom: 1.5rem;
+li .register {
+  background-color: rgb(159, 255, 127);
+  padding: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
