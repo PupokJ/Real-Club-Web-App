@@ -136,11 +136,16 @@ body {
   display: flex;
   justify-content: center;
   padding: 0.3rem;
-  height: 30vh;
-  width: 510px;
+  height: 35vh;
+  width: 695px;
 }
 .register{
     background-color:aquamarine;
     padding:2rem;
     border-radius: 1rem;
+}
+#hor-cards{
+  width: 100%;
+ padding-left: 6rem;
+ padding-bottom: 1.5rem;
 }
