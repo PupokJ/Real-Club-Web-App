@@ -150,3 +150,8 @@ li .register {
   font-weight: bold;
   color: var(--primary-color);
 }
+#hor-cards{
+  width: 100%;
+  padding-left: 7rem;
+  padding-bottom: 1.5rem;
+}
