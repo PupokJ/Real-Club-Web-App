@@ -113,6 +113,14 @@ body {
   padding: 1rem;
   display: flex;
   justify-content: space-evenly;
+  text-decoration: none;
+}
+.card-group a{
+  text-decoration: none;
+  color: #71b7e6;
+}
+.card-group a:hover{
+  color: #9b59b6;
 }
 main .card {
   margin: 0 0.5rem;
