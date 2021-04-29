@@ -167,3 +167,6 @@ li .register {
   padding: 0.9rem;
   border-radius: 3rem;
 }
+.banner img{
+  width: 100%;
+}
