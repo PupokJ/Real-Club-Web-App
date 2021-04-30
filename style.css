@@ -170,3 +170,6 @@ li .register {
 .banner img{
   width: 100%;
 }
+.banner{
+  margin-bottom: 2rem;
+}
