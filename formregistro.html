@@ -26,41 +26,42 @@
           <div class="container">
             <div class="title">Registro Real Club Web App</div>
             <div class="content">
-              <form action="#">
+              <form id="task-form">
                 <div class="user-details">
                   <div class="input-box">
                     <span class="details">Nombre completo</span>
-                    <input type="text" placeholder="Ingrese su nombre" required>
+                    <input type="text" placeholder="Ingrese su nombre" id="form-name" autofocus required>
                   </div>
                   <div class="input-box">
                     <span class="details">Nombre de usuario</span>
-                    <input type="text" placeholder="Ingrese su nombre de usuario" required>
+                    <input type="text" placeholder="Ingrese su nombre de usuario" id="form-nick" required>
                   </div>
                   <div class="input-box">
                     <span class="details">Email</span>
-                    <input type="text" placeholder="Ingrese su email" required>
+                    <input type="email" placeholder="Ingrese su email" id="form-email" required>
                   </div>
                   <div class="input-box">
                     <span class="details">Número de celular</span>
-                    <input type="text" placeholder="Ingrese su número de celular" required>
+                    <input type="number" placeholder="Ingrese su número de celular" id="form-phone" required>
                   </div>
                   <div class="input-box">
                     <span class="details">Contraseña</span>
-                    <input type="text" placeholder="Ingrese su contraseña" required>
+                    <input type="password" placeholder="Ingrese su contraseña" id="form-pass" onkeyup='check();' required>
                   </div>
                   <div class="input-box">
                     <span class="details">Confirme su contraseña</span>
-                    <input type="text" placeholder="Confirme su contraseña" required>
+                    <input type="password" placeholder="Confirme su contraseña"  id="form-pass-confirm" onkeyup='check();'required>
+                    <span id='message'> </span>
                   </div>
                   <div class="input-box">
                     <span class="details">Código de asociado</span>
-                    <input type="text" placeholder="Digite su código de asociado" required>
+                    <input type="number" placeholder="Digite su código de asociado" id="form-member-code" required>
                   </div>
                 </div>
                 <div class="gender-details">
-                  <input type="radio" name="gender" id="dot-1">
-                  <input type="radio" name="gender" id="dot-2">
-                  <input type="radio" name="gender" id="dot-3">
+                  <input type="radio" name="gender" id="dot-1" value="Hombre" required>
+                  <input type="radio" name="gender" id="dot-2" value="Mujer">
+                  <input type="radio" name="gender" id="dot-3" value="Otro">
                   <span class="gender-title">Género</span>
                   <div class="category">
                     <label for="dot-1">
@@ -105,5 +106,29 @@
             </ul>
           </section>
         </footer>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+        <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+            apiKey: "AIzaSyAv-L5euYFWEZaw9MU5JzAPgTJaBuEW0Ok",
+            authDomain: "real-club-webapp.firebaseapp.com",
+            projectId: "real-club-webapp",
+            storageBucket: "real-club-webapp.appspot.com",
+            messagingSenderId: "238133784681",
+            appId: "1:238133784681:web:38f8fba39cf00ded33f2f8",
+            measurementId: "G-4DXQ0M072R"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <script src="./index.js"></script>
   </body>
 </html>
