@@ -158,6 +158,13 @@ li .register {
   font-weight: bold;
   color: var(--primary-color);
 }
+li .login {
+  background-color: #71b7e6;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
 #hor-cards{
   width: 100%;
   padding-left: 7rem;
