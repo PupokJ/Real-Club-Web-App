@@ -27,11 +27,11 @@
           <div class="container">
             <div class="title">Registro Real Club Web App</div>
             <div class="content">
-              <form id="task-form">
+              <form id="signup-form">
                 <div class="user-details">
                   <div class="input-box">
                     <span class="details">Nombre completo</span>
-                    <input type="text" placeholder="Ingrese su nombre" id="form-name" autofocus required>
+                    <input type="text" placeholder="Ingrese su nombre" id="signup-name" autofocus required>
                   </div>
                   <div class="input-box">
                     <span class="details">Nombre de usuario</span>
@@ -112,6 +112,7 @@
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
         <script>
@@ -129,7 +130,8 @@
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
+          const auth = firebase.auth();
         </script>
-        <script src="./index.js"></script>
+        <script src="./auth.js"></script>
   </body>
 </html>

@@ -27,21 +27,21 @@
             <div class="container">
               <div class="title">Login del Real Club Web App</div>
               <div class="content">
-                <form id="task-form">
+                <form id="login-form">
                   <div class="user-details">
                     <div class="input-box">
                       <span class="details">Username</span>
-                      <input type="text" placeholder="Ingrese su username" id="form-username" autofocus required>
+                      <input type="text" placeholder="Ingrese su username" id="user" name="user" autofocus required>
                     </div>
                     <div class="input-box">
                       <span class="details">Contraseña</span>
-                      <input type="text" placeholder="Ingrese su contraseña" id="form-pass" required>
+                      <input type="password" placeholder="Ingrese su contraseña" id="pass" name="pass" required>
                     </div>
                     <div class="input-box">
                       <span class="details"><a href="">Olvidé mi contraseña</span></a>
                     </div>
                   <div class="button">
-                    <input type="submit" value="Registrar">
+                    <input id="form-auth" type="submit" value="Registrar">
                   </div>
                 </form>
               </div>
@@ -68,5 +68,31 @@
               </ul>
             </section>
           </footer>
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+        <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+            apiKey: "AIzaSyAv-L5euYFWEZaw9MU5JzAPgTJaBuEW0Ok",
+            authDomain: "real-club-webapp.firebaseapp.com",
+            projectId: "real-club-webapp",
+            storageBucket: "real-club-webapp.appspot.com",
+            messagingSenderId: "238133784681",
+            appId: "1:238133784681:web:38f8fba39cf00ded33f2f8",
+            measurementId: "G-4DXQ0M072R"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+          const auth = firebase.auth();
+        </script>
+        <script src="./login.js"></script>
 </body>
 </html>
