@@ -1,4 +1,4 @@
-.Ccontainer{
+.Ccontainer{     
     min-height: 60rem;
     background-color: black;
 }
@@ -6,6 +6,11 @@
     width: 90%;
     margin: 0 auto;
     padding: 3.5rem;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
 }
 .welcome {
     padding: 2.5rem;
@@ -23,3 +28,12 @@
   .card a:hover{
     color: #9b59b6;
   }
+ .Ncards{
+     padding: 1.5rem;
+     display: flex;
+     justify-content: center;
+     padding: 1.5rem;
+ }
+ .list-group-item {
+     background-color: #919EB0;
+ }
