@@ -1,0 +1,24 @@
+.Ccontainer{
+    min-height: 60rem;
+}
+.Gcards{
+    width: 90%;
+    margin: 0 auto;
+    padding: 3.5rem;
+}
+.welcome {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    height: 10rem;
+    text-align: end;
+}
+.card img{
+    height: 40rem;
+}
+.card a{
+    text-decoration: none;
+    color: #71b7e6;
+  }
+  .card a:hover{
+    color: #9b59b6;
+  }
