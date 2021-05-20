@@ -10,6 +10,11 @@ signInForm.addEventListener("submit", (e) => {
     .signInWithEmailAndPassword(signUpEmail, signUpPassword)
     .then((userCredential) => {
       console.log("signin");
-      window.location.replace("./vistaCliente.html");
     });
+});
+//event
+firebase.auth().onAuthStateChanged((firebaseUser) => {
+  if (firebaseUser) {
+    window.location = "dashboardClient.html";
+  }
 });

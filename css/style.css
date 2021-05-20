@@ -115,11 +115,11 @@ body {
   justify-content: space-evenly;
   text-decoration: none;
 }
-.card-group a{
+.card-group a {
   text-decoration: none;
   color: #71b7e6;
 }
-.card-group a:hover{
+.card-group a:hover {
   color: #9b59b6;
 }
 main .card {
@@ -165,18 +165,18 @@ li .login {
   font-weight: bold;
   color: var(--primary-color);
 }
-#hor-cards{
+#hor-cards {
   width: 100%;
   padding-left: 7rem;
   padding-bottom: 1.5rem;
 }
-.cards-inst img{
+.cards-inst img {
   padding: 0.9rem;
   border-radius: 3rem;
 }
-.banner img{
+.banner img {
   width: 100%;
 }
-.banner{
+.banner {
   margin-bottom: 2rem;
 }

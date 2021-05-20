@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./formR.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/formR.css">
     <title>Login</title>
 </head>
 <body>
@@ -68,31 +68,11 @@
               </ul>
             </section>
           </footer>
-          <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
-        <script>
-          // Your web app's Firebase configuration
-          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-          var firebaseConfig = {
-            apiKey: "AIzaSyAv-L5euYFWEZaw9MU5JzAPgTJaBuEW0Ok",
-            authDomain: "real-club-webapp.firebaseapp.com",
-            projectId: "real-club-webapp",
-            storageBucket: "real-club-webapp.appspot.com",
-            messagingSenderId: "238133784681",
-            appId: "1:238133784681:web:38f8fba39cf00ded33f2f8",
-            measurementId: "G-4DXQ0M072R"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-          firebase.analytics();
-          const auth = firebase.auth();
-        </script>
-        <script src="./login.js"></script>
+        <script src="./js/firebase.js"></script>
+        <script src="./js/login.js"></script>
 </body>
 </html>
