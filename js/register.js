@@ -1,7 +1,7 @@
 const signUpForm = document.querySelector("#signup-form");
 
 const saveForm = (uid, name, nick, phone, memberCode, gender) =>
-  fs.collection("users").doc(uid).set({
+  fs.collection("users-info").doc(uid).set({
     name,
     nick,
     phone,

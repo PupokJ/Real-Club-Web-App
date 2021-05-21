@@ -1,5 +1,5 @@
 const logout = document.querySelector("#logout");
-const name = document.querySelector(".sname");
+const nombre = document.querySelector(".sname");
 const code = document.querySelector(".scode");
 
 logout.addEventListener("click", (e) => {
@@ -13,11 +13,11 @@ logout.addEventListener("click", (e) => {
 //list for auth state changes
 auth.onAuthStateChanged((user) => {
   if (user) {
-    fs.collection("users")
+    fs.collection("users-info")
       .doc(user.uid)
       .get()
       .then((snapshot) => {
-        name.innerHTML = snapshot.data().name;
+        nombre.innerHTML = snapshot.data().name;
         code.innerHTML = snapshot.data().memberCode;
       });
   } else {
