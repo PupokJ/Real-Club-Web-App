@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real Club Lima - Catálogo Productos</title>
+    <title>Real Club Lima - Catálogo Cursos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>  
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
       <nav class="navbar">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="./catalogoCursos.html">Cursos</a></li>
+          <li><a href="#">Cursos</a></li>
           <li><a href="./catalogoPdtos.html">Productos</a></li>
           <li class="logged-out" style="display: none;">
             <a href="./formregistro.html" class="register">Registrate</a>
@@ -42,39 +42,25 @@
                     </div>
                 </section>
                 <!-- Menú desplegable-->
-                         <h2 style="color: #232488;">Productos</h2>
+                         <h2 style="color: #232488;">Cursos</h2>
                 <ul class="accordion-menu">
                 <li>
-                    <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> Vestimenta
+                    <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> Talleres
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <ul class="submenuItems">
-                    <li><a href="#">Buzos</a></li>
-                    <li><a href="#">Polos</a></li>
-                    <li><a href="#">Gorras</a></li>
-                    <li><a href="#">Trajes de baño</a></li>
-                    
+                    <li><a href="#">Festividades</a></li>
+                    <li><a href="#">Generales</a></li>
                     </ul>
                 </li>
                 <li>
-                    <div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i> Equipamento deportivo
+                    <div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i> Deportes
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <ul class="submenuItems">
-                    <li><a href="#">Pelotas</a></li>
-                    <li><a href="#">Raquetas</a></li>
-                    <li><a href="#">Equipo de natación</a></li>
-                    <li><a href="#">Zapatillas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i> Merchandising
-                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <ul class="submenuItems">
-                    <li><a href="#">Tazas</a></li>
-                    <li><a href="#">Tomatodos</a></li>
-                    <li><a href="#">Útiles de escritorio</a></li>
+                    <li><a href="#">De pelota</a></li>
+                    <li><a href="#">Acuáticos</a></li>
+                    <li><a href="#">De mesa</a></li>
                     </ul>
                 </li>
                 </ul>
@@ -98,23 +84,22 @@
                     <div class="panel-body">
                         <form role="form product-form">
                             <div class="form-group">
-                                <label>Genero</label>
+                                <label>Categoría</label>
                                 <select class="form-control hasCustomSelect" style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                                    <option>Hombre</option>
-                                    <option>Mujer</option>
-                                    <option>Unisex</option>
+                                    <option>Niños</option>
+                                    <option>Adultos</option>
+                                    <option>Todas las edades</option>
                                 </select>
-                                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">Hombre</span></span>
+                                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">Niños</span></span>
                             </div>
                             <div class="form-group">
-                                <label>Talla</label>
+                                <label>Duración</label>
                                 <select class="form-control hasCustomSelect" style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
-                                    <option>Small</option>
-                                    <option>Medium</option>
-                                    <option>Large</option>
-                                    <option>Extra Large</option>
+                                    <option>1 mes</option>
+                                    <option>3 meses</option>
+                                    <option>6 meses</option>
                                 </select>
-                                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">Small</span></span>
+                                <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">1 mes</span></span>
                             </div>
                             <button class="btn btn-primary" type="submit">Filtrar</button>
                         </form>
@@ -183,7 +168,7 @@
         
                             <div class="panel-body text-center">
                                 <h4>
-                                    <a href="./DetallePdto.html" class="pro-title">
+                                    <a href="./DetalleServicio.html" class="pro-title">
                                         Art1
                                     </a>
                                 </h4>
