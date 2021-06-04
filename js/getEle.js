@@ -3,9 +3,8 @@ const getProductos = () => fs.collection("products").get();
 window.addEventListener("DOMContentLoaded", async (e) => {
   const querySnapshot = await getProductos();
   querySnapshot.forEach((doc) => {
-    console.log(doc.data());
     const producto = doc.data();
-    productContainer.innerHTML += `<div class="col-md-4">
+    productContainer.innerHTML += `<div class="col-md-4 product-item" category="${producto.categoria}">
     <section class="panel">
         <div class="pro-img-box">
             <img src="${producto.imagepath}" alt="" />
