@@ -20,6 +20,8 @@ window.addEventListener("DOMContentLoaded", async (e) => {
                 </a>
             </h4>
             <p class="price">S/.${producto.precio}</p>
+            <p style="color: green;">Stock: ${producto.stock}</p>
+            <p style="color: #139DEE;">Material: ${producto.material}</p>
         </div>
     </section>
 </div>`;

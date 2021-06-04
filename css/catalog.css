@@ -59,12 +59,14 @@
         margin: 5px 0 0 0;
     }
     
+    
     .product-list img{
         width: 100%;
         border-radius: 4px 4px 0 0;
         -webkit-border-radius: 4px 4px 0 0;
+        cursor: pointer;
+        overflow: hidden;
     }
-    
     .product-list .pro-img-box {
         position: relative;
     }
@@ -219,4 +221,5 @@
           background-color: #d0e4ff;
           color: #fff;
         }
-    
+
+  
