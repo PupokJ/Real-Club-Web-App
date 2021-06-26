@@ -15,6 +15,7 @@ signInForm.addEventListener("submit", (e) => {
 //event
 firebase.auth().onAuthStateChanged((firebaseUser) => {
   if (firebaseUser) {
-    window.location = "dashboardClient.html";
+    //window.location = "dashboardClient.html";
+    window.location = "crud.html";
   }
 });
