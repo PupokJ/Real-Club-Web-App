@@ -15,7 +15,7 @@ const saveTask = (
   stock,
   material
 ) =>
-  fs.collection("products").doc().set({
+  fs.collection("courses").doc().set({
     nombre,
     precio,
     descripcion,
@@ -25,12 +25,12 @@ const saveTask = (
     material,
   });
 
-const getProductos = () => fs.collection("products").get();
-const onGetTasks = (callback) => fs.collection("products").onSnapshot(callback);
-const deleteTask = (id) => fs.collection("products").doc(id).delete();
-const getTask = (id) => fs.collection("products").doc(id).get();
+const getProductos = () => fs.collection("courses").get();
+const onGetTasks = (callback) => fs.collection("courses").onSnapshot(callback);
+const deleteTask = (id) => fs.collection("courses").doc(id).delete();
+const getTask = (id) => fs.collection("courses").doc(id).get();
 const updateTask = (id, updatedTask) =>
-  fs.collection("products").doc(id).update(updatedTask);
+  fs.collection("courses").doc(id).update(updatedTask);
 
 window.addEventListener("DOMContentLoaded", async (e) => {
   onGetTasks((querySnapshot) => {
@@ -41,8 +41,8 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       productContainer.innerHTML += `
 	  <tr>
 	  <td>${producto.nombre}</td>
-	  <td>${producto.precio}</td>
-    <td>${producto.material}</td>
+	  <td>S/.${producto.precio}</td>
+    <td>${producto.profesor}</td>
 	  <td class="desc-table">${producto.descripcion}</td>
 	  <td>${producto.categoria}</td>
 	  <td><img class="img-table" src="${producto.imagepath}"></td>
@@ -89,12 +89,12 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           editForm["categoria"].value = producto.categoria;
           editForm["imagepath"].value = producto.imagepath;
           editForm["stock"].value = producto.stock;
-          editForm["material"].value = producto.material;
+          editForm["material"].value = producto.profesor;
 
           editStatus = true;
           id = doc.id;
-          modalTitle.innerHTML = `Editando Producto`;
-          editForm["btn-task-form"].value = "Actualizar Producto";
+          modalTitle.innerHTML = `Editando Servicio`;
+          editForm["btn-task-form"].value = "Actualizar Servicio";
         } catch (error) {
           console.log(error);
         }
@@ -128,7 +128,7 @@ editForm.addEventListener("submit", async (e) => {
         nombre: nombre.value,
         precio: precio.value,
         descripcion: descripcion.value,
-        categoria: categoria.value,
+        categoria: profesor.value,
         imagepath: imagepath.value,
         stock: stock.value,
         material: material.value,

@@ -21,7 +21,6 @@ auth.onAuthStateChanged((user) => {
         code.innerHTML = snapshot.data().memberCode;
       });
   } else {
-    console.log("signout");
     window.location = "index.html";
   }
 });
