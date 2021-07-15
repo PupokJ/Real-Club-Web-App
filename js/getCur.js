@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
            
                 <img src="${producto.imagepath}" alt="" />
                
-                <a href="#" class="adtocart">
+                <a href="./carrito.html" class="adtocart">
                     <i class="fa fa-shopping-cart">🛒</i>
                 </a>
                 </div> 
