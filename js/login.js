@@ -15,7 +15,15 @@ signInForm.addEventListener("submit", (e) => {
 //event
 firebase.auth().onAuthStateChanged((firebaseUser) => {
   if (firebaseUser) {
-    //window.location = "dashboardClient.html";
-    window.location = "crud.html";
+    fs.collection("users-info")
+      .doc(firebaseUser.uid)
+      .get()
+      .then((snapshot) => {
+        if(snapshot.data().isAdmin){
+          window.location = "dashboardAdmin.html";
+        }else{
+          window.location = "dashboardClient.html";
+        }
+      });
   }
 });

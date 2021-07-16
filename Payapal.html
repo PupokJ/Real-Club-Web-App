@@ -1,46 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Add meta tags for mobile and IE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title> PayPal Smart Payment Buttons Integration | Client Demo </title>
+    <title>PayPal Smart Payment Buttons Integration | Client Demo</title>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Set up a container element for the button -->
     <div id="paypal-button-container"></div>
 
     <script>
-        // Render the PayPal button into #paypal-button-container
-        paypal.Button.render({
-            env: 'sandbox',
-            client: {
-                sandbox: 'AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE',
-                production: 'AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE',
-            },
-            commit: true,
-            payment: function(data,actions) {
-                return actions.payment.create({
-                    payment: {
-                        transactions: [
-                            {
-                                amount: { total: '50.00', currency: 'USD'}
-                            }
-                        ]
-                    }
-                });
-            },
-            onAuthorize: function(data, actions) {
-                return actions.payment.execute().then(function(){
-                    window.alert('Pago concretado');
-                });
-            }
-        }, '#paypal-button-container');
+      // Render the PayPal button into #paypal-button-container
+      paypal.Button.render(
+        {
+          env: "sandbox",
+          client: {
+            sandbox:
+              "AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE",
+            production:
+              "AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE",
+          },
+          commit: true,
+          payment: function (data, actions) {
+            return actions.payment.create({
+              payment: {
+                transactions: [
+                  {
+                    amount: { total: "50.00", currency: "PEN" },
+                  },
+                ],
+              },
+            });
+          },
+          onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+              window.alert("Pago concretado");
+            });
+          },
+        },
+        "#paypal-button-container"
+      );
     </script>
-</body>
+  </body>
 </html>
-    

@@ -1,7 +1,3 @@
-/* jslint browser: true*/
-/*global $*/
-
-// https://github.com/jasonmoo/t.js
 (function () {
   function c(a) {
     this.t = a;
@@ -49,42 +45,18 @@
   window.t = c;
 })();
 // end of 't';
-
+let pago = 0.00;
 Number.prototype.to_$ = function () {
-  return "$" + parseFloat(this).toFixed(2);
+  return "S/" + parseFloat(this).toFixed(2);
 };
 String.prototype.strip$ = function () {
-  return this.split("$")[1];
+  return this.split("S/")[1];
 };
 
 var app = {
-  shipping: 5.0,
-  products: [
-    {
-      name: "Meet and greet with Bill Murray",
-      price: "19.95",
-      img: "http://fillmurray.com/g/159/159",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    },
-    {
-      name: "Tap Water",
-      price: "0.99",
-      img: "http://shechive.files.wordpress.com/2011/08/odd-products-28.jpg?w=159&h=159",
-      desc: "You decide",
-    },
-    {
-      name: "Social Shower Curtain",
-      price: "40.00",
-      img: "http://media-cache-ec2.pinimg.com/550x/c7/02/8f/c7028f260ae030ba66494ee75407192f.jpg",
-      desc: "Always stay up-to-date with this very useless shower curtain!",
-    },
-    {
-      name: "Self stirring mug",
-      img: "https://i.dailymail.co.uk/i/pix/2012/09/16/article-2204256-15053801000005DC-304_634x524.jpg",
-      price: "12.35",
-      desc: "Don't get tired!",
-    },
-  ],
+  shipping: 15.0,
+  products: [],
+  pago: 0.00,
 
   removeProduct: function () {
     "use strict";
@@ -100,10 +72,12 @@ var app = {
 
   addProduct: function () {
     "use strict";
+    var ctr = $(this).closest(".product-modifiers"),
+    productPrice = ctr.data("pid");
 
     var qtyCtr = $(this).prev(".product-qty"),
       quantity = parseInt(qtyCtr.html(), 10) + 1;
-
+    console.log(productPrice);
     app.updateProductSubtotal(this, quantity);
   },
 
@@ -145,15 +119,16 @@ var app = {
       );
     }
 
-    shipping = subtotal > 0 && subtotal < 100 / 1.06 ? app.shipping : 0;
+    shipping = subtotal > 0 && subtotal < 500 / 1.06 ? app.shipping : 0;
 
-    $("#subtotalCtr").find(".cart-totals-value").html(subtotal.to_$());
+    $("#subtotalCtr").find(".cart-totals-value").html((subtotal/1.18).to_$());
     $("#taxesCtr")
       .find(".cart-totals-value")
-      .html((subtotal * 0.06).to_$());
+      .html((subtotal * 0.18/1.18).to_$());
     $("#totalCtr")
       .find(".cart-totals-value")
-      .html((subtotal * 1.06 + shipping).to_$());
+      .html((subtotal + shipping).to_$());
+      pago=(subtotal + shipping);
     $("#shippingCtr").find(".cart-totals-value").html(shipping.to_$());
   },
 
@@ -188,6 +163,7 @@ var app = {
       template = new t($("#shopping-cart--list-item-template").html());
 
     for (var i = 0; i < products.length; i += 1) {
+      products[i].pprice = products[i].price * products[i].cantidad;
       content[i] = template.render(products[i]);
     }
 
@@ -195,6 +171,6 @@ var app = {
   },
 };
 
-app.renderTemplates();
+/* app.renderTemplates();
 app.setProductImages();
-app.attachEvents();
+app.attachEvents(); */

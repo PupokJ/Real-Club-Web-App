@@ -1,5 +1,15 @@
 const productContainer = document.getElementById("product-list");
 const getProductos = () => fs.collection("courses").get();
+const getItem = (id) => fs.collection("courses").doc(id).get();
+let uid = "";
+auth.onAuthStateChanged((user) => {
+  uid = user.uid;
+});
+//name, price, desc, img
+const saveCarrito = (id,name, price, desc, img) =>
+  fs.collection("users-info").doc(uid).collection("carrito").doc(id).set({
+    name, price, desc, img,cantidad:"1"
+  });
 window.addEventListener("DOMContentLoaded", async (e) => {
   const querySnapshot = await getProductos();
   querySnapshot.forEach((doc) => {
@@ -12,7 +22,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
            
                 <img src="${producto.imagepath}" alt="" />
                
-                <a href="./carrito.html" class="adtocart">
+                <a href="" class="adtocart addCursetocart" data-id="${doc.id}">
                     <i class="fa fa-shopping-cart">🛒</i>
                 </a>
                 </div> 
@@ -29,7 +39,26 @@ window.addEventListener("DOMContentLoaded", async (e) => {
             <p style="color: #139DEE;">Instructor: ${producto.profesor}</p>
         </div>
     </section>
-</div>`
-;
+</div>`;
   });
+  const addcarrito = productContainer.querySelectorAll(".addCursetocart");
+  addcarrito.forEach((btn) =>
+    btn.addEventListener("click", async (e) => {
+      try {
+        e.preventDefault();
+        console.log(e.target.dataset);
+        const docb = await getItem(e.target.dataset.id);
+        const producto = docb.data();
+        let name = producto.nombre;
+        let price = producto.precio;
+        let desc = producto.descripcion;
+        let img = producto.imagepath;
+        console.log(docb.id,name, price, desc, img);
+        saveCarrito(docb.id,name, price, desc, img);
+      } catch (error) {
+        console.log(error);
+      }
+      console.log(e.target.dataset.id);
+    })
+  );
 });

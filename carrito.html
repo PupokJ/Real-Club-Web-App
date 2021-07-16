@@ -10,11 +10,11 @@
       href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5175/utf-latest.min.css"
     />
     <link rel="stylesheet" href="./css/cart.css" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   </head>
   <body>
     <div class="main">
-      <h1>Shopping cart</h1>
-      <h2 class="sub-heading">Free shipping from $100!</h2>
+      <h1>Carrito de compras</h1>
 
       <section class="shopping-cart">
         <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
@@ -26,16 +26,16 @@
               <div class="_column product-info">
                 <h4 class="product-name">{{=name}}</h4>
                 <p class="product-desc">{{=desc}}</p>
-                <div class="price product-single-price">${{=price}}</div>
+                <div class="price product-single-price">S/{{=price}}</div>
               </div>
-              <div class="_column product-modifiers" data-product-price="{{=price}}">
+              <div class="_column product-modifiers" data-product-price="{{=price}}" data-pid="{{=pid}}">
                 <div class="_grid">
                   <button class="_btn _column product-subtract">&minus;</button>
-                  <div class="_column product-qty">0</div>
+                  <div class="_column product-qty">{{=cantidad}}</div>
                   <button class="_btn _column product-plus">&plus;</button>
                 </div>
-                <button class="_btn entypo-trash product-remove">Remove</button>
-                <div class="price product-total-price">$0.00</div>
+                <button class="_btn entypo-trash product-remove">Eliminar</button>
+                <div class="price product-total-price">S/{{=pprice}}</div>
               </div>
             </li>
           </script>
@@ -44,27 +44,71 @@
         <footer class="_grid cart-totals">
           <div class="_column subtotal" id="subtotalCtr">
             <div class="cart-totals-key">Subtotal</div>
-            <div class="cart-totals-value">$0.00</div>
+            <div class="cart-totals-value">S/0.00</div>
           </div>
           <div class="_column shipping" id="shippingCtr">
-            <div class="cart-totals-key">Shipping</div>
-            <div class="cart-totals-value">$0.00</div>
+            <div class="cart-totals-key">Envio</div>
+            <div class="cart-totals-value">S/0.00</div>
           </div>
           <div class="_column taxes" id="taxesCtr">
-            <div class="cart-totals-key">Taxes (6%)</div>
-            <div class="cart-totals-value">$0.00</div>
+            <div class="cart-totals-key">IGV (18%)</div>
+            <div class="cart-totals-value">S/0.00</div>
           </div>
           <div class="_column total" id="totalCtr">
             <div class="cart-totals-key">Total</div>
-            <div class="cart-totals-value">$0.00</div>
+            <div class="cart-totals-value">S/0.00</div>
           </div>
           <div class="_column checkout">
-            <button class="_btn checkout-btn entypo-forward">Checkout</button>
+            <div id="paypal-button-container"></div>
           </div>
         </footer>
+        
       </section>
+      
     </div>
+    
+    <script>
+      // Render the PayPal button into #paypal-button-container
+      paypal.Button.render({
+          env: 'sandbox',
+          client: {
+              sandbox: 'AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE',
+              production: 'AZTUzBEr1pxFLiNs0lGjy21lQVRcgHBqkgGp0-LZvPXoBEprCJxb2YFUPcCklz0OqOoEzS770uCTuVTE',
+          },
+          commit: true,
+          payment: function(data,actions) {
+              console.log(pago);
+              let cambio = parseFloat(pago/3.80).toFixed(2);
+              console.log(cambio);
+              return actions.payment.create({
+                  payment: {
+                      transactions: [
+                          {
+                              amount: { total: cambio, currency: 'USD'}
+                          }
+                      ]
+                  }
+              });
+          },
+          onAuthorize: function(data, actions) {
+              return actions.payment.execute().then(function(){
+                  window.alert('Pago concretado');
+                  window.location = "index.html";
+              });
+          }
+      }, '#paypal-button-container');
+  </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/index.js"></script>
     <script src="./js/cart.js"></script>
+    <script src="./js/carrito.js"></script>
+    
   </body>
 </html>
