@@ -1,3 +1,10 @@
+function AlertIt() {
+  var answer = confirm ("Desea agregar este item al carrito?")
+  if (answer)
+  alert("Se agregó correctamente al carrito");
+  else alert("No se agregó");
+  }
+ 
 const productContainer = document.getElementById("product-list");
 const getProductos = () => fs.collection("courses").get();
 const getItem = (id) => fs.collection("courses").doc(id).get();
@@ -23,7 +30,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
            
                 <img src="${producto.imagepath}" alt="" />
                
-                <a href="" class="adtocart addCursetocart" data-id="${doc.id}">
+                <a href="" onclick="AlertIt()" class="adtocart addCursetocart" data-id="${doc.id}">
                     <i class="fa fa-shopping-cart">🛒</i>
                 </a>
                 </div> 
