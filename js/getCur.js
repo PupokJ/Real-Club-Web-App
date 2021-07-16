@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     const producto = doc.data();
     productContainer.innerHTML += `<div class="col-md-4 product-item" category="${producto.categoria}">
    
+        
     <section class="panel">
     <div id="hover">
         <div class="pro-img-box">
@@ -29,10 +30,8 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         </div>
 
         <div class="panel-body text-center">
-            <h4>
-                <a href="./DetallePdto.html" class="pro-title">
+            <h4>       
                     ${producto.nombre}
-                </a>
             </h4>
             <p class="price">S/.${producto.precio}</p>
             <p style="color: green;">Cupos: ${producto.stock}</p>

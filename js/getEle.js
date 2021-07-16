@@ -1,3 +1,10 @@
+function AlertIt() {
+  var answer = confirm ("Desea agregar este item al carrito?")
+  if (answer)
+  alert("Se agregó correctamente al carrito");
+  else alert("No se agregó");
+  }
+ 
 const productContainer = document.getElementById("product-list");
 const getProductos = () => fs.collection("products").get();
 const getTask = (id) => fs.collection("products").doc(id).get();
@@ -15,19 +22,19 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   querySnapshot.forEach((doc) => {
     const producto = doc.data();
     productContainer.innerHTML += `<div class="col-md-4 product-item" category="${producto.categoria}">
+    
+
     <section class="panel">
         <div class="pro-img-box">
             <img src="${producto.imagepath}" alt="" />
-            <a href="" class="adtocart" data-id="${doc.id}">
+            <a href=""  onclick="AlertIt()" class="adtocart" data-id="${doc.id}">
                 <i class="fa fa-shopping-cart">🛒</i>
             </a>
         </div>
 
         <div class="panel-body text-center">
             <h4>
-                <a href="./DetallePdto.html" class="pro-title">
                     ${producto.nombre}
-                </a>
             </h4>
             <p class="price">S/.${producto.precio}</p>
             <p style="color: green;">Stock: ${producto.stock}</p>
