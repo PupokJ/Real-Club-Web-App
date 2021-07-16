@@ -25,7 +25,7 @@ signUpForm.addEventListener("submit", (e) => {
     const uid = userCredential.user.uid;
     saveForm(uid, name, nick, phone, memberCode, gender);
     signUpForm.reset();
-    name.focus();
+   
   });
 });
 //Validacion
